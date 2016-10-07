@@ -33,6 +33,7 @@ while true do
 	sleep(3)
 	if currentLevel == chestY then
 		if desiredLevel == reactor then
+			print("moving to chest room from reactor room!")
 			for i=1,30 do
 				moveDown()
 			end
