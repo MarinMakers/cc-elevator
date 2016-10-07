@@ -1,10 +1,8 @@
-args 	= {...}
-args[1]	= desiredLevel		--floor to sent elevator to
-print(desiredLevel)
-clientID 		= 38				--receiving computer ID
+clientID = 38
 rednet.open("back")
-rednet.send(clientID, desiredLevel, "elevator")
-print(string.format("Sending elevator to %s floor.", desiredLevel))
---sleep(3)
-term.clear()
-term.setCursorPos(1,1)
+function sendElevator(desiredLevel)
+	rednet.send(clientID, desiredLevel, "elevator")
+	print(string.format("Sending elevator to %s floor.", desiredLevel))
+	term.clear()
+	term.setCursorPos(1,1)
+end
