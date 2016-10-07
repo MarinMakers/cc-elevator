@@ -3,8 +3,6 @@ delay 			= .5
 cable 			= "bottom"
 elevatorID 		= 43
 serverID 		= 35
-chestY			= 69
-reactorY 		= 37
 
 function moveUp()
 	redstone.setBundledOutput(cable, colors.orange)
@@ -29,8 +27,8 @@ while true do
 	rednet.send(elevatorID, "getGPS", "elevator_gps")
 	print("Waiting for gps response:")
 	local elevatorID, currentLevel = rednet.receive("elevator_gps",5)
+	print("currently on level:")
 	print(currentLevel)
-	print(string.format("Moving to %s", desiredLevel))
 	sleep(3)
 	
 	levels = currentLevel - desiredLevel
