@@ -27,7 +27,7 @@ while true do
 	local senderId, desiredLevel, protocol = rednet.receive("elevator")
 	rednet.send(elevatorID, "getGPS", "elevator_gps")
 	print("Waiting for gps response:")
-	local currentLevel = rednet.receive("elevator_gps",5)
+	local elevatorID, currentLevel = rednet.receive("elevator_gps",5)
 	print(currentLevel)
 	print(string.format("Moving to %s", desiredLevel))
 	sleep(3)
