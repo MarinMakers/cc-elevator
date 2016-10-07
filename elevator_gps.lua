@@ -1,4 +1,5 @@
 rednet.open("back")
+print("Starting gps")
 while true do
 	local ID, message, protocol = rednet.receive()
 	if protocol == elevator then
