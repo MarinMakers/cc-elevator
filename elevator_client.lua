@@ -23,6 +23,7 @@ end
 while true do
 	term.clear()
 	term.setCursorPos(1,1)
+
 	print("Waiting for input")
 	local senderId, desiredLevel, protocol = rednet.receive("elevator")
 	rednet.send(elevatorID, "getGPS", "elevator_gps")
@@ -31,35 +32,20 @@ while true do
 	print(currentLevel)
 	print(string.format("Moving to %s", desiredLevel))
 	sleep(3)
-	if currentLevel == chestY then
-		print("current level is chest")
-		if desiredLevel == "reactor" then
-			print("moving to reactor room from chest room!")
-			for i=1,30 do
-				moveDown()
-			end
-		elseif desiredLevel == "chest" then
-			print("Elevator already on that level!")
-			sleep(3)
-		else 
-			print("Unknown level!")
-			sleep(3)
+	
+	levels = currentLevel - desiredLevel
+	if levels > 0 then
+		print("moving down!")
+		for i = 1,levels do
+			moveDown()
 		end
-	elseif currentLevel == reactorY then
-		print("current level is reactor")
-		if desiredLevel == "chest" then
-			print("moving to chest room from reactor room!")
-			for i=1,30 do
-				moveUp()
-			end
-		elseif desiredLevel == "reactor" then
-			print("Elevator already on that level!")
-			sleep(3)
-		else
-			print("Unknown level!")
-			sleep(3)
+	elseif levels < 0 then
+		levels = math.abs(levels)
+		print("moving up!")
+		for i = 1,levels do
+			moveUp()
 		end
+	elseif levels == 0 then
+		print("Already on that level!")
 	end
-	term.clear()
-	term.setCursorPos(1,1)
 end
