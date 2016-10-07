@@ -39,8 +39,10 @@ while true do
 			end
 		elseif desiredLevel == "chest" then
 			print("Elevator already on that level!")
+			sleep(3)
 		else 
 			print("Unknown level!")
+			sleep(3)
 		end
 	elseif currentLevel == reactorY then
 		if desiredLevel == "chest" then
@@ -50,8 +52,10 @@ while true do
 			end
 		elseif desiredLevel == "reactor" then
 			print("Elevator already on that level!")
+			sleep(3)
 		else
 			print("Unknown level!")
+			sleep(3)
 		end
 	end
 	term.clear()
