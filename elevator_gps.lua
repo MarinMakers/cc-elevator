@@ -2,7 +2,7 @@ rednet.open("back")
 print("Starting gps")
 while true do
 	local ID, message, protocol = rednet.receive("elevator_gps")
-	if message == getGPS then
+	if message == "getGPS" then
 		local x, y, z = gps.locate(5, true)
 		rednet.send(ID, y, "elevator_gps")
 	else
