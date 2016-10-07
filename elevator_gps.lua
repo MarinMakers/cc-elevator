@@ -6,7 +6,10 @@ while true do
 		print("Request received!")
 		local x, y, z = gps.locate()
 		rednet.send(ID, y, "elevator_gps")
-		print(string.format("currnet level is %d"), y)
+		print(y)
+		sleep(3)
+		term.clear()
+		term.setCursorPos(1,1)
 	else
 		print("unknown command!")
 		sleep(3)
