@@ -1,5 +1,6 @@
 args 	= {...}
 args[1]	= desiredLevel		--floor to sent elevator to
+print(desiredLevel)
 clientID 		= 38				--receiving computer ID
 rednet.open("back")
 rednet.send(clientID, desiredLevel, elevator)
