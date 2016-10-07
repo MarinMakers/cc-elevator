@@ -1,8 +1,8 @@
 rednet.open("back")
 delay 			= .5
 cable 			= "bottom"
-elevatorID 		= 
-serverID 		= 
+elevatorID 		= 43
+serverID 		= 35
 chestY			= 69
 reactorY 		= 39
 
