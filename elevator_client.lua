@@ -47,5 +47,6 @@ while true do
 		end
 	elseif levels == 0 then
 		print("Already on that level!")
+		sleep(3)
 	end
 end
