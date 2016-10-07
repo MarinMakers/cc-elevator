@@ -32,6 +32,7 @@ while true do
 	print(string.format("Moving to %s", desiredLevel))
 	sleep(3)
 	if currentLevel == chestY then
+		print("current level is chest")
 		if desiredLevel == "reactor" then
 			print("moving to reactor room from chest room!")
 			for i=1,30 do
@@ -45,6 +46,7 @@ while true do
 			sleep(3)
 		end
 	elseif currentLevel == reactorY then
+		print("current level is reactor")
 		if desiredLevel == "chest" then
 			print("moving to chest room from reactor room!")
 			for i=1,30 do
