@@ -3,7 +3,7 @@ delay 			= .5
 cable 			= "bottom"
 elevatorID 		= 43
 serverID 		= 35
-chestY			= 67
+chestY			= 69
 reactorY 		= 37
 
 function moveUp()
