@@ -3,8 +3,8 @@ delay 			= .5
 cable 			= "bottom"
 elevatorID 		= 43
 serverID 		= 35
-chestY			= 69
-reactorY 		= 39
+chestY			= 67
+reactorY 		= 37
 
 function moveUp()
 	redstone.setBundledOutput(cable, colors.orange)
@@ -28,17 +28,17 @@ while true do
 	currentLevel = rednet.send(elevatorID, getGPS, elevator)
 	print(string.format("Moving to %s", desiredLevel))
 	sleep(3)
-	if currentLevel == chest then
+	if currentLevel == chestY then
 		if desiredLevel == reactor then
 			for i=1,30 do
 				moveDown()
 			end
-		elseif desiredLevel ==chest then
+		elseif desiredLevel == chest then
 			print("Elevator already on that level!")
 		else 
 			print("Unknown level!")
 		end
-	elseif currentLevel == reactor then
+	elseif currentLevel == reactorY then
 		if desiredLevel == chest then
 			for i=1,30 do
 				moveUp()
