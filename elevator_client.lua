@@ -26,6 +26,7 @@ while true do
 	print("Waiting for input")
 	local senderId, desiredLevel, elevator = rednet.receive()
 	currentLevel = rednet.send(elevatorID, getGPS, elevator)
+	print(currentLevel)
 	print(string.format("Moving to %s", desiredLevel))
 	sleep(3)
 	if currentLevel == chestY then
