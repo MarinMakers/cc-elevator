@@ -32,22 +32,23 @@ while true do
 	print(string.format("Moving to %s", desiredLevel))
 	sleep(3)
 	if currentLevel == chestY then
-		if desiredLevel == reactor then
-			print("moving to chest room from reactor room!")
+		if desiredLevel == "reactor" then
+			print("moving to reactor room from chest room!")
 			for i=1,30 do
 				moveDown()
 			end
-		elseif desiredLevel == chest then
+		elseif desiredLevel == "chest" then
 			print("Elevator already on that level!")
 		else 
 			print("Unknown level!")
 		end
 	elseif currentLevel == reactorY then
-		if desiredLevel == chest then
+		if desiredLevel == "chest" then
+			print("moving to chest room from reactor room!")
 			for i=1,30 do
 				moveUp()
 			end
-		elseif desiredLevel == reactor then
+		elseif desiredLevel == "reactor" then
 			print("Elevator already on that level!")
 		else
 			print("Unknown level!")
