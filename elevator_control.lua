@@ -1,14 +1,6 @@
 --requires elevator_server to be present!
 os.loadAPI("callElevator")
 
-local options={
-"option1",
-"option2",
-"option3"
-}
-local n=CUI(options)
-print(n)
-
 function CUI(m) --declare function
 n=1 --declare selected option
 while true do --start a loop for the 'go to step#2' part
@@ -28,3 +20,11 @@ for i=1, #m, 1 do --traverse the table of options
 	term.clear() term.setCursorPos(1,1) --clear screen
 	return n --return the value
 end
+
+local options={
+"option1",
+"option2",
+"option3"
+}
+local n=CUI(options)
+print(n)
