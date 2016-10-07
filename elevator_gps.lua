@@ -4,7 +4,7 @@ while true do
 	local ID, message, protocol = rednet.receive("elevator_gps")
 	if message == "getGPS" then
 		print("Request received!")
-		local x, y, z = gps.locate(5, true)
+		local x, y, z = gps.locate()
 		rednet.send(ID, y, "elevator_gps")
 		print(string.format("currnet level is %d"), y)
 	else
